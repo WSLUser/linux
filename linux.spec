@@ -5,13 +5,13 @@
 #
 
 Name:           linux
-Version:        5.19.2
-Release:        1178
+Version:        5.19.4
+Release:        1181
 License:        GPL-2.0
 Summary:        The Linux kernel
 Url:            http://www.kernel.org/
 Group:          kernel
-Source0:        https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.19.2.tar.xz
+Source0:        https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.19.4.tar.xz
 Source1:        config
 Source2:        cmdline
 
@@ -70,6 +70,7 @@ Patch0133: 0133-novector.patch
 Patch0134: scale.patch
 Patch0135: libsgrowdown.patch
 Patch0136: kdf-boottime.patch
+Patch0137: adlrdt.patch
 #Serie.end
 
 #backports
@@ -151,7 +152,7 @@ Requires:       linux-license = %{version}-%{release}
 Linux kernel build files
 
 %prep
-%setup -q -n linux-5.19.2
+%setup -q -n linux-5.19.4
 
 #cve.patch.start cve patches
 #cve.patch.end
@@ -194,6 +195,7 @@ Linux kernel build files
 %patch0134 -p1
 %patch0135 -p1
 %patch0136 -p1
+%patch0137 -p1
 #Serie.patch.end
 
 # backports
